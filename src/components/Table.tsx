@@ -31,15 +31,14 @@ export default function Table() {
                 return base_row;
             } else {
                 // return an array of stringified zero-tuples of length base_row
-                const row = Array(base_row.length).fill([0, 0].toString());
+                const row = Array(base_row[i]).concat(Array(base_row.length-1).fill([0, 0].toString()));
                 return row
             }
         });
 
-        console.log();
         return rows;
     }
-    console.log(genTable(0, 2, 7));
+    // console.log(genTable(0, 2, 7));
 
     return (
         // this is a react fragment, it's like a div but doesn't show up in the DOM
