@@ -8,6 +8,11 @@
   align-items: center;
 }
 
+.equation {
+  font-weight: bold;
+  
+}
+
 /* table is an element type, so no dot  */
 th,
 td {
@@ -15,6 +20,10 @@ td {
 }
 
 th.active, td.active {
+  background-color: yellow;
+}
+
+.active {
   background-color: yellow;
 }
 
