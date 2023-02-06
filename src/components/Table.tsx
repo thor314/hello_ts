@@ -26,11 +26,13 @@ export default function Table() {
     function genTable(a: number, b: number, p: number): Array<Array<string>> {
         const points = genPoints(a, b, p);
         const base_row = ["+", ...points.map(point => point.toString())];
-        const rows: Array<Array<string>> = points.map(([x, y], i) => {
+        const rows = points.map(([x, y], i) => {
             if (i === 0) {
                 return base_row;
             } else {
-                return [(base_row[i].toString())].concat(Array(rows.length - 1).fill(`${0},${0}`));
+                // return an array of stringified zero-tuples of length base_row
+                const row = Array(base_row.length).fill([0, 0].toString());
+                return row
             }
         });
 
