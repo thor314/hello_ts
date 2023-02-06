@@ -54,11 +54,11 @@ export default function Table(props: TableProps) {
     // A prop is a property that can be passed to a component
     // the simplest way to get data throughout componentst is to psas as props
     <table>
-      <thead>
+      {/* <thead>
         <tr>
           Mad skillz table
         </tr>
-      </thead>
+      </thead> */}
       <tbody>
         {
           genTable(a, b, p).map((row, ri) => (
