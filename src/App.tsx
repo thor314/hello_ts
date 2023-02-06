@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+import './styles/App.css';
 
 import TableInputs from './components/TableInputs';
 import TableEquation from './components/TableEquation';

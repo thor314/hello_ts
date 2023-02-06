@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import react from 'react';
 
 // import css
-import '../styles/Table.css';
+// import '../styles/Table.css';
 
 type TableProps = {
   inputs: {
@@ -15,6 +15,7 @@ type TableProps = {
 // functional component returns jsx to create component
 export default function Table(props: TableProps) {
   const { a, b, p } = props.inputs;
+  const [activeCell, setActiveCell] = useState<null | [number, number]>(null);
   /**
    * This is a documentation comment bois! We're documenting!
    * brute force the table values into a 2d array
@@ -65,17 +66,26 @@ export default function Table(props: TableProps) {
             ri === 0
               ? <tr>
                 {
-                  row.map((item) => (
-                    <th>{item}</th>
+                  row.map((item, j) => (
+                    <th className={activeCell && ri === activeCell[0] && j === activeCell[1] ? '' : ''}
+                      onClick={() => setActiveCell([ri, j])}>
+                      {item}
+                    </th>
                   ))
                 }
               </tr>
               : <tr>
                 {
-                  row.map((item, i) => (
-                    i === 0
-                      ? <th>{item}</th>
-                      : <td>{item}</td>
+                  row.map((item, j) => (
+                    j === 0
+                      ? <th className={activeCell && ri === activeCell[0] && j === activeCell[1] ? '' : ''}
+                        onClick={() => setActiveCell([ri, j])}>
+                        {item}
+                      </th>
+                      : <td className={activeCell && ri === activeCell[0] && j === activeCell[1] ? '' : ''}
+                        onClick={() => setActiveCell([ri, j])}>
+                        {item}
+                      </td>
                   ))
                 }
               </tr>
