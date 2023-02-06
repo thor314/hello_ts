@@ -47,7 +47,7 @@ function App() {
       <TableEquation inputs={inputs}      // lets GO
       
       />
-      <Table />
+      <Table inputs={inputs}/>
 
 
       {/* <header className="App-header">
