@@ -67,7 +67,7 @@ export default function Table(props: TableProps) {
               ? <tr>
                 {
                   row.map((item, j) => (
-                    <th className={activeCell && ri === activeCell[0] && j === activeCell[1] ? '' : ''}
+                    <th className={activeCell && ri === activeCell[0] && j === activeCell[1] ? 'active' : ''}
                       onClick={() => setActiveCell([ri, j])}>
                       {item}
                     </th>
@@ -78,11 +78,11 @@ export default function Table(props: TableProps) {
                 {
                   row.map((item, j) => (
                     j === 0
-                      ? <th className={activeCell && ri === activeCell[0] && j === activeCell[1] ? '' : ''}
+                      ? <th className={activeCell && ri === activeCell[0] && j === activeCell[1] ? 'active' : ''}
                         onClick={() => setActiveCell([ri, j])}>
                         {item}
                       </th>
-                      : <td className={activeCell && ri === activeCell[0] && j === activeCell[1] ? '' : ''}
+                      : <td className={activeCell && ri === activeCell[0] && j === activeCell[1] ? 'active' : ''}
                         onClick={() => setActiveCell([ri, j])}>
                         {item}
                       </td>
@@ -92,7 +92,7 @@ export default function Table(props: TableProps) {
           ))
         }
       </tbody>
-    </table>
+    </table >
   )
 }
 

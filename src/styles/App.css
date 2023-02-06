@@ -14,6 +14,10 @@ td {
   padding: 0.75rem;
 }
 
+th.active, td.active {
+  background-color: yellow;
+}
+
 table tr:first-child {
   /* border-bottom-right-radius: 4px solid black; */
   border-bottom: 3px solid black;
